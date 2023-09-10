@@ -9,5 +9,5 @@
   - name: Get a list of all pods from any namespace
     kubernetes.core.k8s_info:
       kind: Pod
-      namespace: ansible-automation-platform
+      namespace: ido
     register: pod_list
