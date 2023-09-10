@@ -1,7 +1,0 @@
----
-# tasks file for demo-roles
-- name: Search for all running pods
-  kubernetes.core.k8s_info:
-    kind: Pod
-    field_selectors:
-      - status.phase=Running
