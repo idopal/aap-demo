@@ -1,13 +1,12 @@
 ---
-- hosts: all
-- hosts: localhost
-
-  collections:
-  - kubernetes.core
-
+- name: k8s demo
+  hosts: localhost
+  gather_facts: false
+  connection: local
   tasks:
-  - name: Get a list of all pods from any namespace
-    kubernetes.core.k8s_info:
-      kind: Pod
-      namespace: ido
-    register: pod_list
+    - name: create ido namespace
+      kubernetes.core.k8s:
+        api_version: v1
+        kind: Namespace
+        name: idodo
+        state: present
