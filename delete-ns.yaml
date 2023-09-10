@@ -9,10 +9,10 @@
         api_version: v1
         kind: Namespace
         name: aap-demo
-        state: present
+        state: absence
 
     - name: create k8s pod
       kubernetes.core.k8s:
         src: deployment.yaml
         namespace: aap-demo
-        state: present
+        state: absence
