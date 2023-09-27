@@ -21,6 +21,9 @@
           domain:
             memory:
               guest: 128Mi
+            resources:
+              requests:
+                memory: 256Mi
             devices:
               interfaces:
               - name: default
