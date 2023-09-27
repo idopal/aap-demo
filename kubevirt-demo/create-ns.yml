@@ -23,7 +23,7 @@
               guest: 128Mi
             resources:
               requests:
-                memory: 256Mi
+                memory: 512Mi
                 cpu: 2
             devices:
               interfaces:
