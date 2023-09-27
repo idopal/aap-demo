@@ -3,5 +3,5 @@
   - name: Delete a VirtualMachine
     kubevirt.core.kubevirt_vm:
       name: idovm
-      namespace: default
+      namespace: kubevirt-ansible
       state: absent
