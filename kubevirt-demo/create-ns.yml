@@ -28,13 +28,6 @@
           networks:
           - name: default
             pod: {}
-          accessCredentials:
-          - sshPublicKey:
-              source:
-                secret:
-                  secretName: my-pub-key
-              propagationMethod:
-                configDrive: {}
           volumes:
           - containerDisk:
               image: quay.io/containerdisks/fedora:latest
