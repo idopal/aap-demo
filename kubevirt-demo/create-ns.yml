@@ -20,11 +20,19 @@
         spec:
           domain:
             cpu:
-              cores: 3
+              cores: 2
+              sockets: 2
             resources:
               requests:
                 memory: 512Mi
             devices:
+              disks:
+                - disk:
+                    bus: virtio
+                  name: rootdisk
+                - disk:
+                    bus: virtio
+                  name: cloudinitdisk
               interfaces:
               - name: default
                 masquerade: {}
