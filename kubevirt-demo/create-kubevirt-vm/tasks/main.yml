@@ -1,0 +1,40 @@
+---
+# tasks file for create-kubevirt-vm
+- name: kubevirt collection for aap
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Create VM
+      kubevirt.core.kubevirt_vm:
+        state: present
+        name: idovm
+        namespace: kubevirt-ansible
+        labels:
+          app: test
+        spec:
+          domain:
+            cpu:
+              cores: 2
+              sockets: 2
+            resources:
+              requests:
+                memory: 512Mi
+            devices:
+              interfaces:
+              - name: default
+                masquerade: {}
+          networks:
+          - name: default
+            pod: {}
+          volumes:
+          - containerDisk:
+              image: quay.io/containerdisks/fedora:latest
+            name: containerdisk
+          - cloudInitConfigDrive:
+              userData: |-
+                #cloud-config
+                # The default username is: fedora
+                password: atomic
+            name: cloudinit
+        wait: yes

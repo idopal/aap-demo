@@ -1,0 +1,13 @@
+---
+# tasks file for delete-kubevirt-vm
+- name: kubevirt collection for aap
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+
+  - name: Delete a VirtualMachine
+    kubevirt.core.kubevirt_vm:
+      name: idovm
+      namespace: default
+      state: absent
