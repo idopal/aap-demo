@@ -13,7 +13,7 @@
     - name: Create VM
       kubevirt.core.kubevirt_vm:
         state: present
-        name: testvm
+        name: idovm
         namespace: kubevirt-ansible
         labels:
           app: test
