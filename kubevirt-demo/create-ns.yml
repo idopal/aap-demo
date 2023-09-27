@@ -40,5 +40,6 @@
               userData: |-
                 #cloud-config
                 # The default username is: fedora
+                password: atomic
             name: cloudinit
         wait: yes
