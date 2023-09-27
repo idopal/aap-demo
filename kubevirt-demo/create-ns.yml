@@ -19,12 +19,11 @@
           app: test
         spec:
           domain:
+            cpu:
+              cores: 3
             resources:
               requests:
                 memory: 512Mi
-                cpu:
-                  sockets: 1
-                    cores: 2
             devices:
               interfaces:
               - name: default
