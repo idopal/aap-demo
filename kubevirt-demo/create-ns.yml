@@ -17,16 +17,14 @@
         namespace: kubevirt-ansible
         labels:
           app: test
-        instancetype:
-          name: example-instancetype
         spec:
           domain:
-            memory:
-              guest: 128Mi
             resources:
               requests:
                 memory: 512Mi
-                cpu: 2
+                cpu:
+                  sockets: 1
+                  cores: 2
             devices:
               interfaces:
               - name: default
