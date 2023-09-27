@@ -19,6 +19,9 @@
           app: test
         spec:
           domain:
+            resources:
+              requests:
+                memory: 2Gi
             devices:
               interfaces:
               - name: default
