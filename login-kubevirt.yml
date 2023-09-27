@@ -1,0 +1,5 @@
+plugin: kubevirt.core.kubevirt
+connections:
+- host: https://api.pbdjf.dynamic.opentlc.com:6443
+  api_key: sha256~6ku2LIA67G1Bzk7P_WQwASDGCrIsxOqpXibjAgXfeOY
+  validate_certs: false
