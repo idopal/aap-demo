@@ -3,7 +3,16 @@
   hosts: localhost
   gather_facts: false
   connection: local
+  vars:
+  controller_validate_certs: false
+collections:
+  - community.kubevirt.kubevirt_vm 
   tasks:
+    vars:
+      controller_validate_certs: false
+    collections:
+      - 
+    
     - name: create ido namespace
       kubernetes.core.k8s:
         api_version: v1
@@ -17,8 +26,8 @@
         namespace: aap-demo
         state: present
 
-    - name: Start virtual machine 'myvm'
-      community.kubevirt.kubevirt_vm:
-          state: running
-          name: myvm
-          namespace: vms
+#    - name: Start virtual machine 'myvm'
+#      community.kubevirt.kubevirt_vm:
+#          state: running
+#          name: myvm
+#          namespace: vms
