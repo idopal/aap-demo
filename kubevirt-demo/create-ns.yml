@@ -24,7 +24,7 @@
                 memory: 512Mi
                 cpu:
                   sockets: 1
-                  cores: 2
+                    cores: 2
             devices:
               interfaces:
               - name: default
