@@ -24,6 +24,7 @@
             resources:
               requests:
                 memory: 256Mi
+                cpu: 2
             devices:
               interfaces:
               - name: default
