@@ -17,8 +17,9 @@
         src: deployment.yaml
         namespace: aap-demo
         state: present
-    - name: Start virtual machine 'myvm'
-      community.kubevirt.kubevirt_vm:
-        state: running
-        name: myvm
-        namespace: vms
+    - name: Delete VM
+      kubevirt.core.kubevirt_vm:
+        name: testvm
+        namespace: kubevirt-ansible
+        state: absent
+        wait: yes
