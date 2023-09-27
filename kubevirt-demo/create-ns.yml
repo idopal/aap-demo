@@ -17,8 +17,6 @@
         namespace: kubevirt-ansible
         labels:
           app: test
-        preference:
-          name: fedora
         spec:
           domain:
             devices:
