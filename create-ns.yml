@@ -17,3 +17,8 @@
         src: deployment.yaml
         namespace: aap-demo
         state: present
+    - name: Start virtual machine 'myvm'
+      community.kubevirt.kubevirt_vm:
+        state: running
+        name: myvm
+        namespace: vms
