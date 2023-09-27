@@ -1,10 +1,5 @@
 ---
 # tasks file for delete-namespace
-- name: kubevirt collection for aap
-  hosts: localhost
-  gather_facts: false
-  connection: local
-  tasks:
     - name: create namespace for kubevirt demo 
       kubernetes.core.k8s:
         api_version: v1
