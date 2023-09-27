@@ -26,14 +26,9 @@
               interfaces:
               - name: default
                 masquerade: {}
-              - name: secondary-network
-                bridge: {}
           networks:
           - name: default
             pod: {}
-          - name: secondary-network
-            multus:
-              networkName: secondary-network
           accessCredentials:
           - sshPublicKey:
               source:
@@ -50,10 +45,4 @@
                 #cloud-config
                 # The default username is: fedora
             name: cloudinit
-        wait: yes
-    - name: Delete VM
-      kubevirt.core.kubevirt_vm:
-        name: testvm
-        namespace: kubevirt-ansible
-        state: absent
         wait: yes
