@@ -17,8 +17,6 @@
         namespace: kubevirt-ansible
         labels:
           app: test
-        instancetype:
-          name: u1.medium
         preference:
           name: fedora
         spec:
