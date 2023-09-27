@@ -1,46 +1,6 @@
-- name: kubevirt collection for aap
-  hosts: localhost
-  gather_facts: false
+---
+- hosts: localhost
   connection: local
   tasks:
-    - name: create namespace for kubevirt demo 
-      kubernetes.core.k8s:
-        api_version: v1
-        kind: Namespace
-        name: kubevirt-ansible
-        state: present
-
-    - name: Create VM
-      kubevirt.core.kubevirt_vm:
-        state: present
-        name: idovm
-        namespace: kubevirt-ansible
-        labels:
-          app: test
-        spec:
-          domain:
-            cpu:
-              cores: 2
-              sockets: 2
-            resources:
-              requests:
-                memory: 512Mi
-            devices:
-              interfaces:
-              - name: default
-                masquerade: {}
-          networks:
-          - name: default
-            pod: {}
-          volumes:
-          - containerDisk:
-              image: quay.io/containerdisks/fedora:latest
-            name: containerdisk
-          - cloudInitConfigDrive:
-              userData: |-
-                #cloud-config
-                # The default username is: fedora
-                password: idodo
-                chpasswd: { expire: False }
-            name: cloudinit
-        wait: yes
+    - import_role:
+        name: create-kubevirt-vm
