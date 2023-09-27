@@ -8,11 +8,6 @@
 collections:
   - community.kubevirt.kubevirt_vm 
   tasks:
-    vars:
-      controller_validate_certs: false
-    collections:
-      - 
-    
     - name: create ido namespace
       kubernetes.core.k8s:
         api_version: v1
