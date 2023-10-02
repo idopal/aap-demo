@@ -1,0 +1,12 @@
+apiVersion: tower.ansible.com/v1alpha1
+kind: JobTemplate
+metadata:
+  name: ido-job
+  namespace: aap
+spec:
+  job_template_name: demo ido
+  inventory: ocp ini
+  connection_secret: aap-access
+  playbook: aap-demo/hello-world.yml
+  project: ido-proj
+  

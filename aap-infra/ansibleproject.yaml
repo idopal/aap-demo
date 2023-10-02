@@ -1,0 +1,11 @@
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleProject
+metadata:
+  name: ido-proj
+  namespace: aap
+spec: 
+  scm_type: git
+  repo: 'https://github.com/idopal/aap-demo.git'
+  name: ido-proj
+  organization: Default
+  connection_secret: aap-access
