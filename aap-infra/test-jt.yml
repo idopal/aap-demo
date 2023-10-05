@@ -1,6 +1,13 @@
 ---
+- hosts: all
 - hosts: localhost
-  connection: local
+
+  collections:
+  - kubernetes.core
+
   tasks:
-    - import_role:
-        name: create-namespace
+  - name: Get a list of all pods from any namespace
+    kubernetes.core.k8s_info:
+      kind: Pod
+      namespace: ansible-automation-platform
+    register: pod_list
