@@ -1,6 +1,6 @@
 ---
-  tasks:
-    - name: Create cert-manager-operator namespace
+# tasks file for delete-namespace
+    - name: create namespace for kubevirt demo 
       redhat.openshift.k8s:
         name: cert-manager-operator-ido
         api_version: v1
