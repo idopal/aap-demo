@@ -1,6 +1,6 @@
 ---
 # tasks file for delete-namespace
-    - name: create namespace for kubevirt demo 
+    - name: create demo namespace
       redhat.openshift.k8s:
         name: ido-aap
         api_version: v1
