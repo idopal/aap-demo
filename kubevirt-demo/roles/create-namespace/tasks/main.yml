@@ -12,7 +12,7 @@
               apiVersion: v1
               kind: ConfigMap
               metadata:
-                  name: foo
+                  name: foo-ido
                   namespace: default
               data:
                   color: “blue”
