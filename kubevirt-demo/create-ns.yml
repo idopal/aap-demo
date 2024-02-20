@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+  collections: kubevirt.core
   tasks:
     - import_role:
         name: create-namespace
