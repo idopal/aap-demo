@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   connection: local
-  collections: kubevirt.core
+  collections: redhat.openshift.k8s
   tasks:
     - import_role:
         name: create-namespace
