@@ -1,7 +1,7 @@
 ---
 # tasks file for create-namespace
     - name: create namespace for kubevirt demo 
-      kubernetes.core.k8s:
+      redhat.openshift.k8s:
         api_version: v1
         kind: Namespace
         name: kubevirt-ansible
