@@ -2,7 +2,17 @@
 # tasks file for delete-namespace
     - name: create namespace for kubevirt demo 
       redhat.openshift.k8s:
-        name: test-aap
+        name: ido-aap
         api_version: v1
         kind: Namespace
         state: present
+    - name: Create foo config map
+      redhat.openshift.k8s:
+          definition:
+              apiVersion: v1
+              kind: ConfigMap
+              metadata:
+                  name: foo
+                  namespace: default
+              data:
+                  color: “blue”
