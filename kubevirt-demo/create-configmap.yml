@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  collections: redhat.openshift.k8s
+  tasks:
+    - name: Create foo config map
+      redhat.openshift.k8s:
+          definition:
+              apiVersion: v1
+              kind: ConfigMap
+              metadata:
+                  name: foo-idodo
+                  namespace: default
+              data:
+                  color: “blue”
