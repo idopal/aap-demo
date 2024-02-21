@@ -2,7 +2,7 @@
 # tasks file for delete-namespace
     - name: create demo namespace
       redhat.openshift.k8s:
-        name: ido-aap
+        name: daniel-aap
         api_version: v1
         kind: Namespace
         state: present
